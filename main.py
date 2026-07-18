@@ -9,14 +9,14 @@ def machen_authors():
     authors_list = []   
 
     for i in author_list_g:
-        # Об'єднана заміна пробілів і крапок
+        # Combined replacement of spaces and dots
         result = re.sub(r'[ .]+', '-', i)
         
         url = f'https://quotes.toscrape.com/author/{result}/'
         response = requests.get(url)
         soup = BeautifulSoup(response.text, 'lxml')
         
-        # Перевірка наявності елементів
+        # Verify if elements are present
         born_date = soup.find('span', class_='author-born-date')
         born_location = soup.find('span', class_='author-born-location')
         description = soup.find('div', class_='author-description')
@@ -59,11 +59,11 @@ def json_machen():
     
     with open('qoutes.json', 'w', encoding='utf-8') as json_file:
         json.dump(qoutes_list, json_file, indent=4, ensure_ascii=False)   
-    print('Die Datei qoutes.json wurde erfolgreich erstellt')
+    print('The file qoutes.json was created successfully')
     
     with open('authors.json', 'w', encoding='utf-8') as json_file:
         json.dump(authors_list, json_file, indent=4, ensure_ascii=False)  
-    print('Die Datei authors.json wurde erfolgreich erstellt')
+    print('The file authors.json was created successfully')
 
 
 if __name__ == '__main__':

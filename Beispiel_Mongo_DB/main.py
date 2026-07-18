@@ -23,7 +23,7 @@ def name(key, value):
             quotes_list_1.append(quote.quote.encode('utf-8').decode('utf-8'))
         return quotes_list_1
     else:
-        return "Autor nicht gefunden."
+        return "Author not found."
     
 @input_error
 def tag(key, value):
@@ -49,7 +49,7 @@ def main():
     while True:
         try:
         
-            command = input("Geben Sie den Befehl ein: ").strip()
+            command = input("Enter command: ").strip()
             if command.lower() in ['exit', 'close', 'stop']:
                 break
             
@@ -66,10 +66,10 @@ def main():
                 print(*tags(key, value))
                     
             else:
-                print("Unbekanntes Team. Versuchen Sie es erneut.")
+                print("Unknown command. Try again.")
                 
         except ValueError:
-            print("Ungültiges Befehlsformat. Versuchen Sie es erneut.")
+            print("Invalid command format. Try again.")
             
         except Exception as e:
             print(e)

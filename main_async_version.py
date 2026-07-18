@@ -60,11 +60,11 @@ async def json_machen():
 
     with open('qoutes.json', 'w', encoding='utf-8') as json_file:
         json.dump(qoutes_list, json_file, indent=4, ensure_ascii=False)
-    print('Die Datei qoutes.json wurde erfolgreich erstellt')
+    print('The file qoutes.json was created successfully')
 
     with open('authors.json', 'w', encoding='utf-8') as json_file:
         json.dump(authors_list, json_file, indent=4, ensure_ascii=False)
-    print('Die Datei authors.json wurde erfolgreich erstellt')
+    print('The file authors.json was created successfully')
 
 if __name__ == '__main__':
     asyncio.run(json_machen())
