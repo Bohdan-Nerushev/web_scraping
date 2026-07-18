@@ -53,7 +53,7 @@ A Python-based application designed to scrape quotes and author profiles from [Q
 
 ## Requirements
 
-- Python 3.8 or higher
+- Python 3.12 or higher
 - A running MongoDB instance (or MongoDB Atlas cluster)
 
 ---
